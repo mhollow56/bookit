@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookResultsComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    }
 
   ngOnInit(): void {
-  }
 
+  }
+  allBooks: Book[] = [
+    new Book(
+        'Book of Testing',
+        'Will Wilder',
+        'Mystery',
+        'https://source.unsplash.com/50x50/?mystery,book'
+    ),
+    // . . .
+];
 }
