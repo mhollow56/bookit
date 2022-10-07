@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Book } from 'src/app/shared/book/book.model';
 
 @Component({
   selector: 'app-book-results',
