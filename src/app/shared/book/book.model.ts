@@ -1,3 +1,5 @@
+
+
 export class Book {
   constructor(
     public title: string,
@@ -5,4 +7,6 @@ export class Book {
     public genre: string,
     public coverImagePath: string
   ) {}
+
 }
+

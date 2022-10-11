@@ -1,4 +1,4 @@
-import { Component, OnInit,  } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output,  } from '@angular/core';
 import { Book } from 'src/app/shared/book/book.model';
 
 @Component({
@@ -7,11 +7,21 @@ import { Book } from 'src/app/shared/book/book.model';
   styleUrls: ['./book-list.component.css']
 })
 
-export class BookListComponent implements OnInit {
+//export class BookListComponent implements OnInit {
+
+  export class BookListComponent {
+    @Output() currentSelectedBook = new EventEmitter<Book>();
+
+    // . . .
+
+    handleBookSelected(book: Book) {
+      // console.log('BOOK:', book);
+      this.currentSelectedBook.emit(book);
+    }
+  }
 
 
-
-  ngOnInit(): void {
+  ngOnInit(); void {
 
 
   }
@@ -24,4 +34,8 @@ export class BookListComponent implements OnInit {
         'https://source.unsplash.com/50x50/?mystery,book'
     )
 ];
+
+function ngOnInit() {
+  throw new Error('Function not implemented.');
 }
+

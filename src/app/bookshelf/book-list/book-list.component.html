@@ -1,6 +1,12 @@
 <div class="row mb-3" *ngFor="let book of myBooks">
+  <app-book *ngFor="let bookEl of myBooks" [book]="bookEl"></app-book>
   <!-- . . . -->
 <hr />
+<app-book
+  *ngFor="let bookEl of myBooks"
+  [book]="bookEl"
+  (bookSelected)="handleBookSelected(bookEl)"
+></app-book>
 
 <div class="row">
   <div class="col-md-12">
@@ -8,7 +14,12 @@
   </div>
 </div>
   <div class="col-md-12">
-    <a href="#" class="list-group-item clearfix">
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <app-book *ngFor="let book of myBooks"></app-book>
+      </div>
+    </div>
+    <!-- . . . -->
       <div class="float-left">
         <h4 class="list-group-item-heading">{{ book.title }}</h4>
         <p class="list-group-item-text mb-0">{{ book.genre }}</p>
@@ -21,6 +32,6 @@
           style="max-height: 50px"
         />
       </div>
-    </a>
+
   </div>
 </div>
